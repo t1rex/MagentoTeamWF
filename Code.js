@@ -1,6 +1,5 @@
 // Load the Visualization API and the piechart package.
 google.load('visualization', '1.0', {'packages':['corechart']});
-google.load('visualization', '1.0', {'packages':['logger']});
 
 // Set a callback to run when the Google Visualization API is loaded.
 google.setOnLoadCallback(readRows());
@@ -241,7 +240,7 @@ function readRows() {
     var sheetData = isEnvSheet() ? getSheetsData() : getFakeData();
     //console.log(fakeData);
     var stats = prepareStatistics(sheetData);
-    //Logger.log(formDevChart(stats.devStats));
+    Console.log(formDevChart(stats.devStats));
     //  Logger.log(stats.devStats);
 }
 
@@ -267,7 +266,7 @@ function formDevChart(data) {
         var d = new Date(curDate);
         scaleXStr += d.getDate() + /* "-" + (d.getMonth() + 1) + */"|";
     }
-//    Logger.log(url.format(minimalTimeUrlPart,actualTimeUrlPart, scaleXStr, developerName));
+    Logger.log(url.format(minimalTimeUrlPart,actualTimeUrlPart, scaleXStr, developerName));
 }
 
 function getTasksByProjects(data) {
